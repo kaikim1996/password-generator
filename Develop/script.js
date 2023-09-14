@@ -1,7 +1,7 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,6 +10,7 @@ function writePassword() {
 
 }
 
+//function to generate the random password
 function generatePassword() {
   const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -18,10 +19,10 @@ function generatePassword() {
   
   let password = '';
   
-  const length = parseInt(prompt("Enter the desired password length (between 8 and 128):"));
+  const length = parseInt(prompt("Enter the length of password (NOTE: must be between 8 and 128):"));
   
   if (isNaN(length) || length < 8 || length > 128) {
-      alert("Invalid input. Password length must be between 8 and 128 characters.");
+      alert("Try Again! Your password length must be between 8 and 128 characters.");
       return;
   }
   
@@ -38,7 +39,7 @@ function generatePassword() {
   let availableChars = '';
   
   if (includeLowercase) {
-      availableChars += lowercaseChars;
+    availableChars += lowercaseChars;
   }
   
   if (includeUppercase) {
@@ -61,10 +62,6 @@ function generatePassword() {
   return password;
 }
 
-const generatedPassword = generatePassword();
 
-if (generatedPassword) {
-  alert("Your generated password is:\n\n" + generatedPassword);
-}
-// Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
