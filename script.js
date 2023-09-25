@@ -1,7 +1,7 @@
-
+//create button
 var generateBtn = document.querySelector("#generate");
 
-
+//function to print password
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,7 +10,7 @@ function writePassword() {
 
 }
 
-//function to generate the random password
+//function to generation password
 function generatePassword() {
   const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
   const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -19,6 +19,7 @@ function generatePassword() {
   
   let password = '';
   
+  //prompts length
   const length = parseInt(prompt("Enter the length of password (NOTE: must be between 8 and 128):"));
   
   if (isNaN(length) || length < 8 || length > 128) {
@@ -26,6 +27,7 @@ function generatePassword() {
       return;
   }
   
+
   const includeLowercase = confirm("Include lowercase characters?");
   const includeUppercase = confirm("Include uppercase characters?");
   const includeDigits = confirm("Include numeric characters?");
